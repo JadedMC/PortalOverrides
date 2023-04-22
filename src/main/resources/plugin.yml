@@ -6,3 +6,10 @@ softdepend: [WorldGuard]
 authors: [JadedMC]
 description: Overrides Portal Behavior Based On Various Settings
 website: https://www.jadedmc.net
+
+commands:
+  portaloverrides:
+    description: Main PortalsOverrides command.
+    aliases: [portals, po]
+    usage: /<command>
+    permission: portaloverrides.admin
