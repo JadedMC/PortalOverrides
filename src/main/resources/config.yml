@@ -1,0 +1,15 @@
+Portals:
+  1:
+    type: NETHER_PORTAL
+    requirements:
+      world: "world"
+      region: "region"
+    actions:
+      commands:
+        - "/spawn"
+      teleport:
+        x: 0
+        y: 0
+        z: 0
+        yaw: 0
+        pitch: 0
