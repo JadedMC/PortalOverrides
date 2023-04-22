@@ -10,6 +10,7 @@ import java.util.Collection;
  * Manages all overridden portals.
  */
 public class PortalManager {
+    private final PortalOverrides plugin;
     private final Collection<Portal> portals = new ArrayList<>();
 
 
@@ -18,6 +19,14 @@ public class PortalManager {
      * @param plugin Instance of the plugin.
      */
     public PortalManager(PortalOverrides plugin) {
+        this.plugin = plugin;
+        reloadPortals();
+    }
+
+    public void reloadPortals() {
+        // Clears previous portals
+        portals.clear();
+
         ConfigurationSection section = plugin.getSettingsManager().getConfig().getConfigurationSection("Portals");
 
         // Makes sure there is a Portals section in the config.
