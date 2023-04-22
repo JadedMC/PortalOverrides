@@ -1,6 +1,7 @@
 package net.jadedmc.portaloverrides;
 
 import net.jadedmc.portaloverrides.commands.PortalOverridesCMD;
+import net.jadedmc.portaloverrides.listeners.PlayerPortalListener;
 import net.jadedmc.portaloverrides.listeners.PortalEnterListener;
 import net.jadedmc.portaloverrides.portals.PortalManager;
 import net.jadedmc.portaloverrides.runnables.PortalEnterChecker;
@@ -29,6 +30,7 @@ public final class PortalOverrides extends JavaPlugin {
 
         // Registers events.
         Bukkit.getPluginManager().registerEvents(new PortalEnterListener(this), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerPortalListener(this), this);
 
         // Registers runnables.
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new PortalEnterChecker(), 5, 5);
