@@ -1,5 +1,9 @@
 package net.jadedmc.portaloverrides;
 
+import net.jadedmc.portaloverrides.listeners.PortalEnterListener;
+import net.jadedmc.portaloverrides.portals.PortalManager;
+import net.jadedmc.portaloverrides.runnables.PortalEnterChecker;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -7,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * It links all parts together and registers them with the server.
  */
 public final class PortalOverrides extends JavaPlugin {
+    private PortalManager portalManager;
     private SettingsManager settingsManager;
 
     /**
@@ -14,8 +19,23 @@ public final class PortalOverrides extends JavaPlugin {
      */
     @Override
     public void onEnable() {
-        // Plugin startup logic
+
         settingsManager = new SettingsManager(this);
+        portalManager = new PortalManager(this);
+
+        // Registers events.
+        Bukkit.getPluginManager().registerEvents(new PortalEnterListener(this), this);
+
+        // Registers runnables.
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new PortalEnterChecker(), 5, 5);
+    }
+
+    /**
+     * Gets the current portal manager instance.
+     * @return Portal manager.
+     */
+    public PortalManager getPortalManager() {
+        return portalManager;
     }
 
     /**
