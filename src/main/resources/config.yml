@@ -1,12 +1,29 @@
+# List of all your custom portals.
 Portals:
   1:
+    # The type of portal. Can be either NETHER_PORTAL or END_PORTAL
     type: NETHER_PORTAL
+
+    # The requirements needed for this portal to take effect.
     requirements:
+      # The world the portal must be in.
+      # Remove this field to apply to all worlds.
       world: "world"
+
+      # The WorldGuard region the portal must be in.
+      # Remove this field to apply to all regions.
       region: "region"
+
+      # The various actions that should be completed
     actions:
+
+      # A list of commands that the player should run when they enter the portal.
+      # Remove this field if there are no commands.
       commands:
         - "/spawn"
+
+      # The location the portal should teleport the player.
+      # Remove this if you do not want the portal to teleport the player.
       teleport:
         world: world
         x: 0
