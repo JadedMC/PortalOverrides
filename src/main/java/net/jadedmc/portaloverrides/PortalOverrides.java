@@ -34,6 +34,9 @@ public final class PortalOverrides extends JavaPlugin {
 
         // Registers runnables.
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new PortalEnterChecker(), 5, 5);
+
+        // Enables bStats statistics tracking.
+        new Metrics(this, 18282);
     }
 
     /**
