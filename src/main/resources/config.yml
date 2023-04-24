@@ -1,3 +1,6 @@
+# Disables the vanilla nether and end portals.
+DisableVanillaPortals: false
+
 # List of all your custom portals.
 Portals:
   1:

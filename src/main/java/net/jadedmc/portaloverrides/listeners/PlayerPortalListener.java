@@ -41,5 +41,10 @@ public class PlayerPortalListener implements Listener {
                 break;
             }
         }
+
+        // Disable vanilla portals if that's configured.
+        if(plugin.getSettingsManager().getConfig().getBoolean("DisableVanillaPortals")) {
+            event.setCancelled(true);
+        }
     }
 }
