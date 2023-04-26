@@ -24,8 +24,8 @@ public class Portal {
     private final String region;
     private final String world;
     private final List<String> commands = new ArrayList<>();
-
     private final Location teleportLocation;
+    private final String permission;
 
     /**
      * Creates a portal object.
@@ -52,6 +52,14 @@ public class Portal {
         }
         else {
             world = "";
+        }
+
+        // Get the permission required to use the portal.
+        if(settings.isSet(path + "requirements.permission")) {
+            permission = settings.getString(path + "requirements.permission");
+        }
+        else {
+            permission = "";
         }
 
         // Load commands
@@ -110,6 +118,11 @@ public class Portal {
      * @param player Player using the portal.
      */
     public boolean usePortal(Player player) {
+
+        // Checks permission requirements
+        if(!permission.isEmpty() && !player.hasPermission(permission)) {
+            return false;
+        }
 
         // Checks world requirements.
         if(getWorld() != null) {
