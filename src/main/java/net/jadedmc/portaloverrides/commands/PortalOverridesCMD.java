@@ -70,8 +70,7 @@ public class PortalOverridesCMD implements CommandExecutor, TabCompleter {
 
             // Reloads all plugin configuration files.
             case "reload":
-                plugin.getConfigManager().reloadConfig();
-                plugin.getPortalManager().reloadPortals();
+                plugin.reload();
                 ChatUtils.chat(sender, "&a&lPortalOverrides &8» &aConfiguration file reloaded successfully!");
                 return true;
 

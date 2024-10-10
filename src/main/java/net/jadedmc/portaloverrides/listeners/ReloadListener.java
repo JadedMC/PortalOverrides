@@ -50,7 +50,6 @@ public class ReloadListener implements Listener {
      */
     @EventHandler
     public void onReload(final ReloadEvent event) {
-        plugin.getConfigManager().reloadConfig();
-        plugin.getPortalManager().reloadPortals();
+        plugin.reload();
     }
 }

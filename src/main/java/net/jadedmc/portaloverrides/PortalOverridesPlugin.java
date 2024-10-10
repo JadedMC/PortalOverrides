@@ -83,4 +83,12 @@ public final class PortalOverridesPlugin extends JavaPlugin {
     public ConfigManager getConfigManager() {
         return configManager;
     }
+
+    /**
+     * Reloads the plugin configuration and updates important values.
+     */
+    public void reload() {
+        this.configManager.reloadConfig();
+        this.portalManager.reloadPortals();
+    }
 }
