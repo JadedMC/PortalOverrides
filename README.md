@@ -7,6 +7,7 @@ PortalOverrides allows you to modify vanilla portal behavior under some circumst
 * Per-Region modifications (Requires WorldGuard)
 * Teleport the player when they enter a modified portal
 * Have the player run a list of commands when they enter a modified portal.
+* BetterReload support
 
 ## Requirements
 * Java 8 or newer

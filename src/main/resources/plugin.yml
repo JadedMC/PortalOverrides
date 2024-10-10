@@ -2,7 +2,9 @@ name: PortalOverrides
 version: '${project.version}'
 main: net.jadedmc.portaloverrides.PortalOverrides
 api-version: 1.13
-softdepend: [WorldGuard]
+softdepend:
+  - WorldGuard
+  - BetterReload
 authors: [JadedMC]
 description: Overrides Portal Behavior Based On Various Settings
 website: https://www.jadedmc.net
