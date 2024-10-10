@@ -22,35 +22,58 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  */
-package net.jadedmc.portaloverrides.listeners;
+package net.jadedmc.portaloverrides;
 
-import better.reload.api.ReloadEvent;
-import net.jadedmc.portaloverrides.PortalOverrides;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
- * Listens to the ReloadEvent, which runs every time the server is "reloaded" using the BetterReload plugin.
- * <a href="https://github.com/amnoah/BetterReload">BetterReload GitHub</a>
+ * Manages the configurable settings in the plugin.
  */
-public class ReloadListener implements Listener {
-    private final PortalOverrides plugin;
+public class ConfigManager {
+    private FileConfiguration config;
+    private final File configFile;
 
     /**
-     * Creates the listener.
+     * Loads or Creates configuration files.
      * @param plugin Instance of the plugin.
      */
-    public ReloadListener(final PortalOverrides plugin) {
-        this.plugin = plugin;
+    public ConfigManager(Plugin plugin) {
+        configFile = new File(plugin.getDataFolder(), "config.yml");
+        if(!configFile.exists()) {
+            plugin.saveResource("config.yml", false);
+        }
+        config = YamlConfiguration.loadConfiguration(configFile);
     }
 
     /**
-     * Runs when the server is "reloaded".
-     * @param event ReloadEvent.
+     * Get the config.yml FileConfiguration.
+     * @return config.yml FileConfiguration.
      */
-    @EventHandler
-    public void onReload(final ReloadEvent event) {
-        plugin.getConfigManager().reloadConfig();
-        plugin.getPortalManager().reloadPortals();
+    public FileConfiguration getConfig() {
+        return config;
+    }
+
+    /**
+     * Update the configuration file.
+     */
+    public void reloadConfig() {
+        config = YamlConfiguration.loadConfiguration(configFile);
+    }
+
+    /**
+     * Save the configuration file.
+     */
+    public void saveConfig() {
+        try {
+            config.save(configFile);
+        }
+        catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
 }

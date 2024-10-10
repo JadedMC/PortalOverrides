@@ -40,14 +40,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class PortalOverrides extends JavaPlugin {
     private HookManager hookManager;
     private PortalManager portalManager;
-    private SettingsManager settingsManager;
+    private ConfigManager configManager;
 
     /**
      * Runs when the server is started.
      */
     @Override
     public void onEnable() {
-        settingsManager = new SettingsManager(this);
+        configManager = new ConfigManager(this);
         hookManager = new HookManager(this);
         portalManager = new PortalManager(this);
 
@@ -77,10 +77,10 @@ public final class PortalOverrides extends JavaPlugin {
     }
 
     /**
-     * Gets the current settings manager instance.
-     * @return Settings Manager.
+     * Gets the current config manager instance.
+     * @return Config Manager.
      */
-    public SettingsManager getSettingsManager() {
-        return settingsManager;
+    public ConfigManager getConfigManager() {
+        return configManager;
     }
 }
