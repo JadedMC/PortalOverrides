@@ -24,7 +24,7 @@
  */
 package net.jadedmc.portaloverrides.portals;
 
-import net.jadedmc.portaloverrides.PortalOverrides;
+import net.jadedmc.portaloverrides.PortalOverridesPlugin;
 import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ import java.util.Collection;
  * Manages all overridden portals.
  */
 public class PortalManager {
-    private final PortalOverrides plugin;
+    private final PortalOverridesPlugin plugin;
     private final Collection<Portal> portals = new ArrayList<>();
 
 
@@ -42,7 +42,7 @@ public class PortalManager {
      * Creates the portal manager.
      * @param plugin Instance of the plugin.
      */
-    public PortalManager(final PortalOverrides plugin) {
+    public PortalManager(final PortalOverridesPlugin plugin) {
         this.plugin = plugin;
         reloadPortals();
     }

@@ -30,7 +30,7 @@ import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
-import net.jadedmc.portaloverrides.PortalOverrides;
+import net.jadedmc.portaloverrides.PortalOverridesPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -56,7 +56,7 @@ public class Portal {
      * @param plugin Instance of the plugin.
      * @param id Portal id as set in the config.
      */
-    public Portal(final PortalOverrides plugin, final String id) {
+    public Portal(final PortalOverridesPlugin plugin, final String id) {
         FileConfiguration settings = plugin.getConfigManager().getConfig();
         String path = "Portals." + id + ".";
 

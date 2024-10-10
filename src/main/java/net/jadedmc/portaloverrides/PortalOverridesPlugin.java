@@ -37,7 +37,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * This class is the main class of the plugin.
  * It links all parts together and registers them with the server.
  */
-public final class PortalOverrides extends JavaPlugin {
+public final class PortalOverridesPlugin extends JavaPlugin {
     private HookManager hookManager;
     private PortalManager portalManager;
     private ConfigManager configManager;

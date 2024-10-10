@@ -24,7 +24,7 @@
  */
 package net.jadedmc.portaloverrides.commands;
 
-import net.jadedmc.portaloverrides.PortalOverrides;
+import net.jadedmc.portaloverrides.PortalOverridesPlugin;
 import net.jadedmc.portaloverrides.utils.ChatUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -37,13 +37,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class PortalOverridesCMD implements CommandExecutor, TabCompleter {
-    private final PortalOverrides plugin;
+    private final PortalOverridesPlugin plugin;
 
     /**
      * To be able to access the configuration files, we need to pass an instance of the plugin to our listener.
      * @param plugin Instance of the plugin.
      */
-    public PortalOverridesCMD(final PortalOverrides plugin) {
+    public PortalOverridesCMD(final PortalOverridesPlugin plugin) {
         this.plugin = plugin;
     }
 

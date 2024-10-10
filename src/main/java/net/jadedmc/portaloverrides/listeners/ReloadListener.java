@@ -25,7 +25,7 @@
 package net.jadedmc.portaloverrides.listeners;
 
 import better.reload.api.ReloadEvent;
-import net.jadedmc.portaloverrides.PortalOverrides;
+import net.jadedmc.portaloverrides.PortalOverridesPlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -34,13 +34,13 @@ import org.bukkit.event.Listener;
  * <a href="https://github.com/amnoah/BetterReload">BetterReload GitHub</a>
  */
 public class ReloadListener implements Listener {
-    private final PortalOverrides plugin;
+    private final PortalOverridesPlugin plugin;
 
     /**
      * Creates the listener.
      * @param plugin Instance of the plugin.
      */
-    public ReloadListener(final PortalOverrides plugin) {
+    public ReloadListener(final PortalOverridesPlugin plugin) {
         this.plugin = plugin;
     }
 

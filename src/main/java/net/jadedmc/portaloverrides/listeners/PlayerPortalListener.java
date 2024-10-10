@@ -24,7 +24,7 @@
  */
 package net.jadedmc.portaloverrides.listeners;
 
-import net.jadedmc.portaloverrides.PortalOverrides;
+import net.jadedmc.portaloverrides.PortalOverridesPlugin;
 import net.jadedmc.portaloverrides.portals.Portal;
 import net.jadedmc.portaloverrides.portals.PortalType;
 import org.bukkit.event.EventHandler;
@@ -33,13 +33,13 @@ import org.bukkit.event.player.PlayerPortalEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
 public class PlayerPortalListener implements Listener {
-    private final PortalOverrides plugin;
+    private final PortalOverridesPlugin plugin;
 
     /**
      * To be able to access the configuration files, we need to pass an instance of the plugin to our listener.
      * @param plugin Instance of the plugin.
      */
-    public PlayerPortalListener(final PortalOverrides plugin) {
+    public PlayerPortalListener(final PortalOverridesPlugin plugin) {
         this.plugin = plugin;
     }
 

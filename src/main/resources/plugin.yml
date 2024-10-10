@@ -1,6 +1,6 @@
 name: PortalOverrides
 version: '${project.version}'
-main: net.jadedmc.portaloverrides.PortalOverrides
+main: net.jadedmc.portaloverrides.PortalOverridesPlugin
 api-version: 1.13
 softdepend:
   - WorldGuard
