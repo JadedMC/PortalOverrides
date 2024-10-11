@@ -30,6 +30,7 @@ import net.jadedmc.portaloverrides.listeners.PortalEnterListener;
 import net.jadedmc.portaloverrides.listeners.ReloadListener;
 import net.jadedmc.portaloverrides.portals.PortalManager;
 import net.jadedmc.portaloverrides.runnables.PortalEnterChecker;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
